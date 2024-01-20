@@ -1,5 +1,4 @@
-Set up a Palworld dedicated server on Linux
-For extra clarity watch my YouTube video below.
+Set up a Palworld dedicated server on Linux - For extra clarity watch my YouTube video below.
 ---
 
 ## YouTube Overview
