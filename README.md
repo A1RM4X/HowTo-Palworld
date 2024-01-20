@@ -69,4 +69,4 @@ Launch server and profit:
 ### Extra
 ---
 
-To have the serve running after closing the ssh terminal, running it using 'screen'.
+To have the serve running after closing the ssh terminal, launch it using `screen`. Enjoy!
