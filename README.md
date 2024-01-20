@@ -1,5 +1,5 @@
 Set up a Palworld dedicated server on Linux
-
+For extra clarity watch my YouTube video below.
 ---
 
 ## YouTube Overview
@@ -22,4 +22,47 @@ apt-add-repository non-free
 dpkg --add-architecture i386
 apt update
 apt install steamcmd
+```
+
+Install sudo and create a new user steam:
+```bash
+apt install sudo
+
+useradd -m steam
+passwd steam
+```
+
+Log in as steam:
+```bash
+sudo -u steam -s
+cd /home/steam
+```
+
+Install the Palworld dedicated server via SteamCMD:
+```bash
+/usr/games/steamcmd +login anonymous +app_update 2394010 validate +quit
+```
+
+Fix server log errors by creating symlinks:
+```bash
+cd ~/.steam
+ln -s steam/steamcmd/linux32 sdk32
+ln -s steam/steamcmd/linux64 sdk64
+```
+
+Launch server for creating configuration files:
+```bash
+cd ~/.steam/steam/steamapps/common/PalServer
+./PalServer.sh -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS
+```
+
+Copy server settings file in the right directory then edit the settings as you wish (details in YouTube video):
+```bash
+cp DefaultPalWorldSettings.ini Pal/Saved/Config/LinuxServer/PalWorldSettings.ini
+nano Pal/Saved/Config/LinuxServer/PalWorldSettings.ini
+```
+
+Launch server and profit:
+```bash
+./PalServer.sh -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS
 ```
