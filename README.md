@@ -65,3 +65,8 @@ Launch server and profit:
 ```bash
 ./PalServer.sh -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS
 ```
+
+### Extra
+---
+
+To have the serve running after closing the ssh terminal, running it using 'screen'.
