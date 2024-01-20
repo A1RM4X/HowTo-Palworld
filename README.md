@@ -14,9 +14,10 @@ Make sure you have a fresh Debian server up and running with a SSH access.
 Update and upgrade everything:
 ```bash apt update && apt dist-upgrade```
 
-Install SteamCMD with all the dependencies
+Install SteamCMD with all the dependencies:
 ```bash apt install software-properties-common
 apt-add-repository non-free
 dpkg --add-architecture i386
 apt update
-apt install steamcmd```
+apt install steamcmd
+```
