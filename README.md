@@ -103,3 +103,5 @@ service palworld start
 Restart & update the server by using this command `service palworld restart`
 
 Stop the server by using this command `service palworld stop`
+
+Please support the channel by liking the video, leaving a comment and watch the full length of it! THANKS!
