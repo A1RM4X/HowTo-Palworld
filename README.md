@@ -101,4 +101,5 @@ service palworld start
 ### Extra
 ---
 Restart & update the server by using this command `service palworld restart`
+
 Stop the server by using this command `service palworld stop`
