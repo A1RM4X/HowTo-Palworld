@@ -63,6 +63,20 @@ nano Pal/Saved/Config/LinuxServer/PalWorldSettings.ini
 ```
 
 #### Setup a service to automize the management of the server
+
+Make sure all the command below are executed as root.
+
+Install network-manager and enable the wait-online service to facilitate the server management:
+```bash
+apt install network-manager
+systemctl enable NetworkManager-wait-online.service
+```
+
+Restart the network:
+```bash
+service networking restart
+```
+
 Create a Palworld service file:
 ```bash
 nano /etc/systemd/system/palworld.service
