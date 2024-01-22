@@ -68,7 +68,7 @@ Make sure all the command below are executed as root.
 
 Install network-manager and enable the wait-online service to facilitate the server management:
 ```bash
-apt install network-manager
+apt install network-manager-config-connectivity-debian
 systemctl enable NetworkManager-wait-online.service
 ```
 
