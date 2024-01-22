@@ -66,17 +66,6 @@ nano Pal/Saved/Config/LinuxServer/PalWorldSettings.ini
 
 Make sure all the command below are executed as root.
 
-Install network-manager and enable the wait-online service to facilitate the server management:
-```bash
-apt install network-manager-config-connectivity-debian
-systemctl enable NetworkManager-wait-online.service
-```
-
-Reboot the host:
-```bash
-shutdown -r 0
-```
-
 Create a Palworld service file:
 ```bash
 nano /etc/systemd/system/palworld.service
@@ -85,7 +74,9 @@ nano /etc/systemd/system/palworld.service
 Edit the Palworld service file (watch the videos for more details):
 ```bash
 [Unit]
-Description=Palworld Dedicated Server by A1RM4X 0.1
+Description=Palworld Dedicated Server by A1RM4X 0.2
+Wants=network-online.target
+After=network-online.target
 
 [Service]
 User=steam
@@ -100,8 +91,7 @@ RuntimeMaxSec=12h
 
 
 [Install]
-Wants=network-online.target
-After=network-online.target
+
 WantedBy=multi-user.target
 ```
 
