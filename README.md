@@ -72,9 +72,9 @@ apt install network-manager
 systemctl enable NetworkManager-wait-online.service
 ```
 
-Restart the network:
+Reboot the host:
 ```bash
-service networking restart
+shutdown -r 0
 ```
 
 Create a Palworld service file:
