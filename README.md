@@ -62,7 +62,7 @@ wget https://raw.githubusercontent.com/A1RM4X/HowTo-Palworld/dev/palworld-mainte
 
 Create the backup folder and give it the right permissions:
 ```bash
-mkdir -P /home/steam/Palworld_backups && chown steam:steam /home/steam/Palworld-backups
+mkdir -p /home/steam/Palworld_backups && chown steam:steam /home/steam/Palworld_backups
 ```
 
 Download the Palworld service file:
