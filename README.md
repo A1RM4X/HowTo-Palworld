@@ -1,12 +1,9 @@
-Set up a Palworld dedicated server on Linux - For extra clarity watch my YouTube video below.
+Set up a Palworld dedicated server on Linux - For extra clarity watch my YouTube videos below.
 ---
-
-## YouTube Overview
-
 [![A1RM4X on YouTube](http://img.youtube.com/vi/0TjFLk_lP6c/0.jpg)](https://youtu.be/0TjFLk_lP6c "Setup a dedicated Palworld server with A1RM4X - Part 1")
 [![A1RM4X on YouTube](http://img.youtube.com/vi/bjC081ERYcQ/0.jpg)](https://youtu.be/bjC081ERYcQ "Setup a dedicated Palworld server with A1RM4X - Part 2")
 
-### Tutorial
+# Tutorial
 ---
 
 Make sure you have a fresh Debian 12 server up and running with a SSH access.
@@ -51,11 +48,11 @@ Copy server settings file in the right directory then edit the settings as you w
 cp DefaultPalWorldSettings.ini Pal/Saved/Config/LinuxServer/PalWorldSettings.ini && nano Pal/Saved/Config/LinuxServer/PalWorldSettings.ini
 ```
 
-#### Setup a service to automize the management of the server
+## Setup a service to automize the management of the server
 
 Make sure all the command below are executed as root.
 
-##### Setup the maintenance script for server backups and updates (watch the videos for more details).
+### Setup the maintenance script for server backups and updates (watch the videos for more details).
 
 Create the maintenance script, make it executable and give it the right user permissions:
 ```bash
@@ -72,7 +69,7 @@ Download the Palworld service file:
 wget https://raw.githubusercontent.com/A1RM4X/HowTo-Palworld/dev/palworld.service -P /etc/systemd/system/
 ```
 
-#### Backing up and restoring server data localy
+### Backing up and restoring server data localy
 
 Stop the palworld server before restoring the backup
 ```bash
@@ -95,10 +92,10 @@ test -d /home/steam/.steam/steam/steamapps/common/PalServer/Pal/Saved && echo RE
 ```
 
 
-### Extra
+## Extra
 ---
-Restart & update the server by using this command `service palworld restart`
+Restart, backup & update the server by using this command `systemctl restart palworld.service`
 
-Stop the server by using this command `service palworld stop`
+Stop the server by using this command `systemctl stop palworld.service`
 
 Please support the channel by liking the video, leaving a comment and watch the full length of it! THANKS!
