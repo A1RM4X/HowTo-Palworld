@@ -127,10 +127,29 @@ Then follow the Backing up and restoring server data localy [here](https://githu
 
 
 ### 3. No .steam folder on my debian server
-Log in the new server and make sure you have executed the whole tutorial for having a server up and running.
+Some users reported not having the same folder structure on their Debian installation. To fix the issue, follow thoses steps below:
 
-Log in root in the old server, then SCP transfer the file in the new server (more details in the youTube video):
+Log in as steam:
 ```bash
-scp /home/steam/Palworld_backups/Palworld_MODIFY-DATE-HERE.tar.gz IP_ADRESS_NEW_SERVER:/home/steam/Palworld_backups/
+sudo -u steam -s && cd /home/steam
 ```
-Then follow the Backing up and restoring server data localy [here](https://github.com/A1RM4X/HowTo-Palworld/blob/dev/README.md#2-backing-up-and-restoring-server-data-localy).
+Create the .steam folder and create the correct symlinks for the server to start:
+```bash
+mkdir /home/steam/.steam && cd /home/steam/.steam && ln -s /home/steam/.local/share/Steam/steamcmd/linux32 sdk32 && ln -s /home/steam/.local/share/Steam/steamcmd/linux64 sdk64
+```
+
+Check if the server start correctly:
+```bash
+cd ~/Steam/steamapps/common/PalServer && ./PalServer.sh -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS
+```
+
+If it works, close the server. Continue the process by copying server settings file in the right directory then edit the settings as you wish (details in YouTube video):
+```bash
+cp DefaultPalWorldSettings.ini Pal/Saved/Config/LinuxServer/PalWorldSettings.ini && nano Pal/Saved/Config/LinuxServer/PalWorldSettings.ini
+```
+
+Last one, because your folder structure is not the same, download this specific Palworld service file instead of the one showed in the tutorial above [Here](https://github.com/A1RM4X/HowTo-Palworld/tree/dev#1-setup-the-maintenance-script-for-server-backups-and-updates-watch-the-videos-for-more-details):
+```bash
+wget https://raw.githubusercontent.com/A1RM4X/HowTo-Palworld/dev/palworld.service-no.steam -P /etc/systemd/system/ && mv /etc/systemd/system/palworld.service-no.steam /etc/systemd/system/palworld.service 
+```
+
