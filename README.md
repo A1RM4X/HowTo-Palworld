@@ -70,6 +70,11 @@ Download the Palworld service file:
 wget https://raw.githubusercontent.com/A1RM4X/HowTo-Palworld/dev/palworld.service -P /etc/systemd/system/
 ```
 
+Enable and start the service file (watch the videos for more details):
+```bash
+systemctl enable palworld.service && systemctl daemon-reload && systemctl start palworld.service
+```
+
 ### Backing up and restoring server data localy
 
 Stop the palworld server before restoring the backup
