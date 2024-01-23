@@ -100,8 +100,21 @@ test -d /home/steam/.steam/steam/steamapps/common/PalServer/Pal/Saved && echo RE
 
 ## Extra
 ---
+### Manual Restart / Backup / Stop the palworld server
+
 Restart, backup & update the server by using this command `systemctl restart palworld.service`
 
 Stop the server by using this command `systemctl stop palworld.service`
 
-Please support the channel by liking the video, leaving a comment and watch the full length of it! THANKS!
+### Copy server configuration files from another server
+Log in the new server and make sure you have executed the whole tutorial for having a server up and running.
+
+Log in root in the old server, then SCP transfer the file in the new server (more details in the youTube video):
+```bash
+scp /home/steam/Palworld_backups/Palworld_MODIFY-DATE-HERE.tar.gz IP_ADRESS_NEW_SERVER:/home/steam/Palworld_backups/
+```
+Then follow the Backing up and restoring server data localy tutorial just above.
+
+
+
+# Please support the channel by liking the video, leaving a comment and watch the full length of it! THANKS!
