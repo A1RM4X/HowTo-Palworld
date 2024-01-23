@@ -113,7 +113,7 @@ Log in root in the old server, then SCP transfer the file in the new server (mor
 ```bash
 scp /home/steam/Palworld_backups/Palworld_MODIFY-DATE-HERE.tar.gz IP_ADRESS_NEW_SERVER:/home/steam/Palworld_backups/
 ```
-Then follow the Backing up and restoring server data localy tutorial just above.
+Then follow the Backing up and restoring server data localy [here](https://github.com/A1RM4X/HowTo-Palworld/blob/dev/README.md#2-backing-up-and-restoring-server-data-localy).
 
 
 
