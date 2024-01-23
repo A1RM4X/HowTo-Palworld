@@ -107,15 +107,16 @@ test -d /home/steam/.steam/steam/steamapps/common/PalServer/Pal/Saved && echo RE
 ```
 
 
-## Extra
+## FAQ
 ---
-### Manual Restart / Backup / Stop the palworld server
+### 1. Manual Restart / Backup / Stop the palworld server
 
 Restart, backup & update the server by using this command `systemctl restart palworld.service`
 
 Stop the server by using this command `systemctl stop palworld.service`
 
-### Copy server configuration files from another server
+
+### 2. Transferring / copying server configuration files from a server to another server
 Log in the new server and make sure you have executed the whole tutorial for having a server up and running.
 
 Log in root in the old server, then SCP transfer the file in the new server (more details in the youTube video):
@@ -125,5 +126,11 @@ scp /home/steam/Palworld_backups/Palworld_MODIFY-DATE-HERE.tar.gz IP_ADRESS_NEW_
 Then follow the Backing up and restoring server data localy [here](https://github.com/A1RM4X/HowTo-Palworld/blob/dev/README.md#2-backing-up-and-restoring-server-data-localy).
 
 
+### 3. No .steam folder on my debian server
+Log in the new server and make sure you have executed the whole tutorial for having a server up and running.
 
-# Please support the channel by liking the video, leaving a comment and watch the full length of it! THANKS!
+Log in root in the old server, then SCP transfer the file in the new server (more details in the youTube video):
+```bash
+scp /home/steam/Palworld_backups/Palworld_MODIFY-DATE-HERE.tar.gz IP_ADRESS_NEW_SERVER:/home/steam/Palworld_backups/
+```
+Then follow the Backing up and restoring server data localy [here](https://github.com/A1RM4X/HowTo-Palworld/blob/dev/README.md#2-backing-up-and-restoring-server-data-localy).
