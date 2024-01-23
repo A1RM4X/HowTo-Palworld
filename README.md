@@ -18,11 +18,7 @@ apt update && apt dist-upgrade
 
 Install SteamCMD with all the dependencies:
 ```bash
-apt install software-properties-common
-apt-add-repository non-free
-dpkg --add-architecture i386
-apt update
-apt install steamcmd
+apt install software-properties-common && apt-add-repository non-free && dpkg --add-architecture i386 && apt update && apt install steamcmd
 ```
 
 Install sudo and create a new user steam:
