@@ -53,7 +53,7 @@ cp DefaultPalWorldSettings.ini Pal/Saved/Config/LinuxServer/PalWorldSettings.ini
 
 Make sure all the command below are executed as root.
 
-### Setup the maintenance script for server backups and updates (watch the videos for more details).
+### 1. Setup the maintenance script for server backups and updates (watch the videos for more details).
 
 Create the maintenance script, make it executable and give it the right user permissions:
 ```bash
@@ -75,7 +75,7 @@ Enable and start the service file (watch the videos for more details):
 systemctl enable palworld.service && systemctl daemon-reload && systemctl start palworld.service
 ```
 
-### Backing up and restoring server data localy
+### 2. Backing up and restoring server data localy
 
 Stop the palworld server before restoring the backup
 ```bash
