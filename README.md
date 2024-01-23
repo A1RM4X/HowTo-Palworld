@@ -1,4 +1,4 @@
-Set up a Palworld dedicated server on Linux - For extra clarity watch my YouTube videos below.
+# Set up a Palworld dedicated server on Linux - More details in the youTube videos below:
 ---
 [![A1RM4X on YouTube](http://img.youtube.com/vi/0TjFLk_lP6c/0.jpg)](https://youtu.be/0TjFLk_lP6c "Setup a dedicated Palworld server with A1RM4X - Part 1")
 [![A1RM4X on YouTube](http://img.youtube.com/vi/bjC081ERYcQ/0.jpg)](https://youtu.be/bjC081ERYcQ "Setup a dedicated Palworld server with A1RM4X - Part 2")
