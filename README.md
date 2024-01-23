@@ -55,70 +55,44 @@ cp DefaultPalWorldSettings.ini Pal/Saved/Config/LinuxServer/PalWorldSettings.ini
 
 Make sure all the command below are executed as root.
 
-Create a Palworld service file:
+##### Setup the maintenance script for server backups and updates (watch the videos for more details).
+
+Create the maintenance script, make it executable and give it the right user permissions:
 ```bash
-nano /etc/systemd/system/palworld.service
+wget https://raw.githubusercontent.com/A1RM4X/HowTo-Palworld/dev/palworld-maintenance.sh -P /home/steam/ && chmod +x /home/steam/palworld-maintenance.sh && chown steam:steam /home/steam/palworld-maintenance.sh
 ```
 
-Edit the Palworld service file (watch the videos for more details):
+Create the backup folder and give it the right permissions:
 ```bash
-[Unit]
-Description=Palworld Dedicated Server by A1RM4X 0.3
-Wants=network-online.target
-After=network-online.target
-
-[Service]
-User=steam
-Group=steam
-Environment="templdpath=$LD_LIBRARY_PATH"
-Environment="LD_LIBRARY_PATH=/home/steam/.steam/steam/steamapps/common/PalServer/linux64:$LD_LIBRARY_PATH"
-Environment="SteamAppId=2394010"
-ExecStartPre=/home/steam/maintenance.sh
-ExecStart=/home/steam/.steam/steam/steamapps/common/PalServer/PalServer.sh -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS > /dev/null
-Restart=always
-RuntimeMaxSec=4h
-
-
-[Install]
-WantedBy=multi-user.target
+mkdir -P /home/steam/Palworld_backups && chown steam:steam /home/steam/Palworld-backups
 ```
 
-Setup the maintenance script for server backups and updates (watch the videos for more details).
-Create the maintenance script:
+Download the Palworld service file:
 ```bash
-nano /etc/systemd/system/palworld.service
+wget https://raw.githubusercontent.com/A1RM4X/HowTo-Palworld/dev/palworld.service -P /etc/systemd/system/
 ```
 
+#### Backing up and restoring server data localy
+
+Stop the palworld server before restoring the backup
 ```bash
-[Unit]
-Description=Palworld Dedicated Server by A1RM4X 0.3
-Wants=network-online.target
-After=network-online.target
-
-[Service]
-User=steam
-Group=steam
-Environment="templdpath=$LD_LIBRARY_PATH"
-Environment="LD_LIBRARY_PATH=/home/steam/.steam/steam/steamapps/common/PalServer/linux64:$LD_LIBRARY_PATH"
-Environment="SteamAppId=2394010"
-ExecStartPre=/home/steam/maintenance.sh
-ExecStart=/home/steam/.steam/steam/steamapps/common/PalServer/PalServer.sh -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS > /dev/null
-Restart=always
-RuntimeMaxSec=4h
-
-
-[Install]
-WantedBy=multi-user.target
+systemctl stop palworld.service
 ```
 
-
-Enable and start the service file (watch the videos for more details):
+Make sure the previous palworld server data is deleted 
 ```bash
-systemctl enable palworld.service && systemctl daemon-reload && service palworld start
+test -d /home/steam/.steam/steam/steamapps/common/PalServer/Pal/Saved && rm -rf /home/steam/.steam/steam/steamapps/common/PalServer/Pal/Saved
 ```
 
-#### Setup a service to automize the management of the server
+Select the backup you want to restore (check video on YouTube for details) and extract it
+```bash
+tar -xzvf /home/steam/Palworld_backups/Palworld_MODIFY-DATE-HERE.tar.gz -C /
+```
 
+Verify all went well
+```bash
+test -d /home/steam/.steam/steam/steamapps/common/PalServer/Pal/Saved && echo RESTORATION SUCCESS!!!
+```
 
 
 ### Extra
