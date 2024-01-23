@@ -4,6 +4,15 @@ More details videos below:
 [![A1RM4X on YouTube](http://img.youtube.com/vi/0TjFLk_lP6c/0.jpg)](https://youtu.be/0TjFLk_lP6c "Setup a dedicated Palworld server with A1RM4X - Part 1")
 [![A1RM4X on YouTube](http://img.youtube.com/vi/bjC081ERYcQ/0.jpg)](https://youtu.be/bjC081ERYcQ "Setup a dedicated Palworld server with A1RM4X - Part 2")
 
+> [!IMPORTANT]
+> This script is based on Debian 12, it might work with other distros it might not, please don´t come to my discord for support, I won´t have time to adapt this script for all the distro out there.
+> This script is going to be updated, make sure to watch the youtube videos above to be up to date to the last scripts / tutorial.
+
+> [!CAUTION]
+> The game is in ealry access, this script will help you install your own dedicated server on Linux but it will not solve all the problems related to the game itself.
+> I try to simplify the execution of the tasks / commands, however you might need to be a little bit familiar with Linux in general to run this script.
+> I also won´t cover any problems related to networking, you are on your own when it comes to open the ports of your router or make sure you don´t have any firewall blocking you to connect on your own server. Google is your friend for fixing those common issues.
+
 # Tutorial
 ---
 
