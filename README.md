@@ -9,7 +9,7 @@ Set up a Palworld dedicated server on Linux - For extra clarity watch my YouTube
 ### Tutorial
 ---
 
-Make sure you have a fresh Debian server up and running with a SSH access.
+Make sure you have a fresh Debian 12 server up and running with a SSH access.
 
 Update and upgrade everything:
 ```bash
@@ -63,7 +63,7 @@ nano /etc/systemd/system/palworld.service
 Edit the Palworld service file (watch the videos for more details):
 ```bash
 [Unit]
-Description=Palworld Dedicated Server by A1RM4X 0.2
+Description=Palworld Dedicated Server by A1RM4X 0.3
 Wants=network-online.target
 After=network-online.target
 
@@ -73,20 +73,53 @@ Group=steam
 Environment="templdpath=$LD_LIBRARY_PATH"
 Environment="LD_LIBRARY_PATH=/home/steam/.steam/steam/steamapps/common/PalServer/linux64:$LD_LIBRARY_PATH"
 Environment="SteamAppId=2394010"
-ExecStartPre=/usr/games/steamcmd +login anonymous +app_update 2394010 validate +quit
+ExecStartPre=/home/steam/maintenance.sh
 ExecStart=/home/steam/.steam/steam/steamapps/common/PalServer/PalServer.sh -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS > /dev/null
 Restart=always
-RuntimeMaxSec=12h
+RuntimeMaxSec=4h
 
 
 [Install]
 WantedBy=multi-user.target
 ```
 
+Setup the maintenance script for server backups and updates (watch the videos for more details).
+Create the maintenance script:
+```bash
+nano /etc/systemd/system/palworld.service
+```
+
+```bash
+[Unit]
+Description=Palworld Dedicated Server by A1RM4X 0.3
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=steam
+Group=steam
+Environment="templdpath=$LD_LIBRARY_PATH"
+Environment="LD_LIBRARY_PATH=/home/steam/.steam/steam/steamapps/common/PalServer/linux64:$LD_LIBRARY_PATH"
+Environment="SteamAppId=2394010"
+ExecStartPre=/home/steam/maintenance.sh
+ExecStart=/home/steam/.steam/steam/steamapps/common/PalServer/PalServer.sh -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS > /dev/null
+Restart=always
+RuntimeMaxSec=4h
+
+
+[Install]
+WantedBy=multi-user.target
+```
+
+
 Enable and start the service file (watch the videos for more details):
 ```bash
 systemctl enable palworld.service && systemctl daemon-reload && service palworld start
 ```
+
+#### Setup a service to automize the management of the server
+
+
 
 ### Extra
 ---
