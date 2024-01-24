@@ -34,7 +34,7 @@ Make sure all the commands below are executed as root.
 
 Create the maintenance script, make it executable and give it the right user permissions:
 ```bash
-wget https://raw.githubusercontent.com/A1RM4X/HowTo-Palworld/dev/palworld-maintenance.sh -P /home/steam/ && chmod +x /home/steam/palworld-maintenance.sh && chown steam:steam /home/steam/palworld-maintenance.sh
+wget https://raw.githubusercontent.com/A1RM4X/HowTo-Palworld/blob/main/palworld-maintenance.sh -P /home/steam/ && chmod +x /home/steam/palworld-maintenance.sh && chown steam:steam /home/steam/palworld-maintenance.sh
 ```
 
 Create the backup folder and give it the right permissions:
@@ -44,7 +44,7 @@ mkdir -p /home/steam/Palworld_backups && chown steam:steam /home/steam/Palworld_
 
 Download the Palworld service file:
 ```bash
-wget https://raw.githubusercontent.com/A1RM4X/HowTo-Palworld/dev/palworld.service-no.steam -P /etc/systemd/system/ && mv /etc/systemd/system/palworld.service-no.steam /etc/systemd/system/palworld.service 
+wget https://raw.githubusercontent.com/A1RM4X/HowTo-Palworld/blob/main/palworld.service-no.steam -P /etc/systemd/system/ && mv /etc/systemd/system/palworld.service-no.steam /etc/systemd/system/palworld.service 
 ```
 
 Enable and start the service file (watch the videos for more details):
@@ -70,6 +70,6 @@ Verify all went well
 ```bash
 test -d /home/steam/Steam/steamapps/common/PalServer/Pal/Saved && echo "RESTORATION SUCCESS"
 ```
-### [Back to the main Tutorial](https://github.com/A1RM4X/HowTo-Palworld/blob/dev/README.md)
+### [Back to the main Tutorial](https://github.com/A1RM4X/HowTo-Palworld/blob/main/README.md)
 
 
