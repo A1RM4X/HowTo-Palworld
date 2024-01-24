@@ -35,7 +35,12 @@ apt install sudo && useradd -m steam && passwd steam
 
 Log in as steam:
 ```bash
-sudo -u steam -s && cd /home/steam
+sudo -u steam -s
+```
+
+Go in the steam home folder:
+```bash
+cd /home/steam
 ```
 
 Install the Palworld dedicated server via SteamCMD:
