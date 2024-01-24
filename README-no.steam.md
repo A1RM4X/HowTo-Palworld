@@ -28,7 +28,7 @@ cp DefaultPalWorldSettings.ini Pal/Saved/Config/LinuxServer/PalWorldSettings.ini
 
 ## Setup a service to automize the management of the server
 
-Make sure all the command below are executed as root.
+Make sure all the commands below are executed as root.
 
 ### 1. Setup the maintenance script for server backups and updates (watch the videos for more details).
 
