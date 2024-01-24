@@ -54,7 +54,7 @@ if test -d /home/steam/.steam ; then clear ; echo "You have a .steam folder - FO
 ```
 
 > [!CAUTION]
-> - If you don´t have a .steam folder in /home/steam/, please switch to this specific [tutorial](https://github.com/A1RM4X/HowTo-Palworld/main/README-no.steam.md)
+> - If you don´t have a .steam folder in /home/steam/, please switch to this specific [tutorial](https://github.com/A1RM4X/HowTo-Palworld/blob/main/README-no.steam.md)
 
 Fix server log errors by creating symlinks:
 ```bash
