@@ -48,7 +48,7 @@ Fix server log errors by creating symlinks:
 cd ~/.steam && ln -s steam/steamcmd/linux32 sdk32 && ln -s steam/steamcmd/linux64 sdk64
 ```
 > [!CAUTION]
-> - If you don´t have a .steam folder in /home/steam/, please switch to this specific [tutorial](https://github.com/A1RM4X/HowTo-Palworld/blob/dev/README-no.steam.md)
+> - If you don´t have a .steam folder in /home/steam/, please switch to this specific (https://github.com/A1RM4X/HowTo-Palworld/blob/dev/README-no.steam.md)
 
 
 Launch server for creating configuration files:
