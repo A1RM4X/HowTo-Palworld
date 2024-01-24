@@ -42,14 +42,13 @@ Install the Palworld dedicated server via SteamCMD:
 ```bash
 /usr/games/steamcmd +login anonymous +app_update 2394010 validate +quit
 ```
+> [!CAUTION]
+> - If you don´t have a .steam folder in /home/steam/, please switch to this specific [tutorial](https://github.com/A1RM4X/HowTo-Palworld/blob/dev/README-no.steam.md)
 
 Fix server log errors by creating symlinks:
 ```bash
 cd ~/.steam && ln -s steam/steamcmd/linux32 sdk32 && ln -s steam/steamcmd/linux64 sdk64
 ```
-> [!CAUTION]
-> - If you don´t have a .steam folder in /home/steam/, please switch to this specific [tutorial](https://github.com/A1RM4X/HowTo-Palworld/blob/dev/README-no.steam.md)
-
 
 Launch server for creating configuration files:
 ```bash
