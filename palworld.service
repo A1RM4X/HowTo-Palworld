@@ -1,0 +1,19 @@
+[Unit]
+Description=Palworld Dedicated Server by A1RM4X 0.3
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=steam
+Group=steam
+Environment="templdpath=$LD_LIBRARY_PATH"
+Environment="LD_LIBRARY_PATH=/home/steam/:$LD_LIBRARY_PATH"
+Environment="SteamAppId=2394010"
+ExecStartPre=/home/steam/palworld-maintenance.sh
+ExecStart=/home/steam/.steam/steam/steamapps/common/PalServer/PalServer.sh -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS > /dev/null
+Restart=always
+RuntimeMaxSec=4h
+
+
+[Install]
+WantedBy=multi-user.target
