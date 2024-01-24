@@ -42,6 +42,12 @@ Install the Palworld dedicated server via SteamCMD:
 ```bash
 /usr/games/steamcmd +login anonymous +app_update 2394010 validate +quit
 ```
+
+Testing your steam folder structure:
+```bash
+if test -d /home/steam/.steam ; then echo "You have a .steam folder - FOLLOW THE SCRIPT"; else echo "YOU DONT HAVE A .steam FOLDER, PLEASE USE THE SPECIFIC SCRIPT"; fi
+```
+
 > [!CAUTION]
 > - If you don´t have a .steam folder in /home/steam/, please switch to this specific [tutorial](https://github.com/A1RM4X/HowTo-Palworld/blob/dev/README-no.steam.md)
 
