@@ -34,7 +34,7 @@ Make sure all the commands below are executed as root.
 
 Create the maintenance script, make it executable and give it the right user permissions:
 ```bash
-wget https://raw.githubusercontent.com/A1RM4X/HowTo-Palworld/blob/main/palworld-maintenance.sh -P /home/steam/ && chmod +x /home/steam/palworld-maintenance.sh && chown steam:steam /home/steam/palworld-maintenance.sh
+wget https://raw.githubusercontent.com/A1RM4X/HowTo-Palworld/blob/main/palworld-maintenance.sh-no.steam -P /home/steam/ && mv /home/steam/palworld-maintenance.sh-no.steam /home/steam/palworld-maintenance.sh && chmod +x /home/steam/palworld-maintenance.sh && chown steam:steam /home/steam/palworld-maintenance.sh
 ```
 
 Create the backup folder and give it the right permissions:
