@@ -140,4 +140,4 @@ Then follow the Backing up and restoring server data localy [here](https://githu
 
 
 ### 3. No .steam folder on my debian server
-Some users reported not having the same folder structure on their Debian installation. To fix the issue, use this [tutorial](https://github.com/A1RM4X/HowTo-Palworld/main/README-no.steam.md).
+Some users reported not having the same folder structure on their Debian installation. To fix the issue, use this [tutorial](https://github.com/A1RM4X/HowTo-Palworld/blob/main/README-no.steam.md).
