@@ -45,7 +45,7 @@ Install the Palworld dedicated server via SteamCMD:
 
 Testing your steam folder structure:
 ```bash
-if test -d /home/steam/.steam ; then clear ; then echo "You have a .steam folder - FOLLOW THE SCRIPT"; else clear ; then echo "YOU DONT HAVE A .steam FOLDER, PLEASE USE THE SPECIFIC SCRIPT"; fi
+if test -d /home/steam/.steam ; then clear ; echo "You have a .steam folder - FOLLOW THE SCRIPT"; else clear ; echo "YOU DONT HAVE A .steam FOLDER, PLEASE USE THE SPECIFIC SCRIPT"; fi
 ```
 
 > [!CAUTION]
