@@ -2,6 +2,7 @@
 ---
 
 Follow this part of the tutorial after starting on the main one because your folders structure is not the same.
+
 Make sure you have a fresh Debian 12 server up and running with a SSH access.
 
 Log in as steam:
