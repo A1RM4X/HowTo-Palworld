@@ -54,7 +54,7 @@ if test -d /home/steam/.steam ; then clear ; echo "You have a .steam folder - FO
 ```
 
 > [!CAUTION]
-> - If you don´t have a .steam folder in /home/steam/, please switch to this specific [tutorial](https://github.com/A1RM4X/HowTo-Palworld/blob/main/README-no.steam.md)
+> - If you don´t have a .steam folder in /home/steam/, please switch to this specific [tutorial](https://github.com/A1RM4X/HowTo-Palworld/main/README-no.steam.md)
 
 Fix server log errors by creating symlinks:
 ```bash
@@ -79,7 +79,7 @@ Make sure all the command below are executed as root.
 
 Create the maintenance script, make it executable and give it the right user permissions:
 ```bash
-wget https://raw.githubusercontent.com/A1RM4X/HowTo-Palworld/blob/main/palworld-maintenance.sh -P /home/steam/ && chmod +x /home/steam/palworld-maintenance.sh && chown steam:steam /home/steam/palworld-maintenance.sh
+wget https://raw.githubusercontent.com/A1RM4X/HowTo-Palworld/main/palworld-maintenance.sh -P /home/steam/ && chmod +x /home/steam/palworld-maintenance.sh && chown steam:steam /home/steam/palworld-maintenance.sh
 ```
 
 Create the backup folder and give it the right permissions:
@@ -89,7 +89,7 @@ mkdir -p /home/steam/Palworld_backups && chown steam:steam /home/steam/Palworld_
 
 Download the Palworld service file:
 ```bash
-wget https://raw.githubusercontent.com/A1RM4X/HowTo-Palworld/blob/main/palworld.service -P /etc/systemd/system/
+wget https://raw.githubusercontent.com/A1RM4X/HowTo-Palworld/main/palworld.service -P /etc/systemd/system/
 ```
 
 Enable and start the service file (watch the videos for more details):
@@ -140,4 +140,4 @@ Then follow the Backing up and restoring server data localy [here](https://githu
 
 
 ### 3. No .steam folder on my debian server
-Some users reported not having the same folder structure on their Debian installation. To fix the issue, use this [tutorial](https://github.com/A1RM4X/HowTo-Palworld/blob/dev/README-no.steam.md).
+Some users reported not having the same folder structure on their Debian installation. To fix the issue, use this [tutorial](https://github.com/A1RM4X/HowTo-Palworld/main/README-no.steam.md).
