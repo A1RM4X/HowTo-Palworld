@@ -51,7 +51,25 @@ Enable and start the service file (watch the videos for more details):
 ```bash
 systemctl enable palworld.service && systemctl daemon-reload && systemctl start palworld.service
 ```
+Stop the palworld server before restoring the backup
+```bash
+systemctl stop palworld.service
+```
 
-### [2. Backing up and restoring server data localy](https://github.com/A1RM4X/HowTo-Palworld/blob/dev/README.md#2-backing-up-and-restoring-server-data-localy)
+Make sure the previous palworld server data is deleted 
+```bash
+test -d /home/steam/Steam/steamapps/common/PalServer/Pal/Saved && rm -rf /home/steam/Steam/steamapps/common/PalServer/Pal/Saved
+```
+
+Select the backup you want to restore (check video on YouTube for details) and extract it
+```bash
+tar -xzvf /home/steam/Palworld_backups/Palworld_MODIFY-DATE-HERE.tar.gz -C /
+```
+
+Verify all went well
+```bash
+test -d /home/steam/Steam/steamapps/common/PalServer/Pal/Saved && echo "RESTORATION SUCCESS"
+```
+### [Back to the main Tutorial](https://github.com/A1RM4X/HowTo-Palworld/blob/dev/README.md)
 
 
