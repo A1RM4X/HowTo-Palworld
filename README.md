@@ -105,7 +105,7 @@ tar -xzvf /home/steam/Palworld_backups/Palworld_MODIFY-DATE-HERE.tar.gz -C /
 
 Verify all went well
 ```bash
-test -d /home/steam/.steam/steam/steamapps/common/PalServer/Pal/Saved && echo "RESTORATION SUCCESS!!!"
+test -d /home/steam/.steam/steam/steamapps/common/PalServer/Pal/Saved && echo "RESTORATION SUCCESS"
 ```
 
 
