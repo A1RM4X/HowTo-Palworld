@@ -47,6 +47,9 @@ Fix server log errors by creating symlinks:
 ```bash
 cd ~/.steam && ln -s steam/steamcmd/linux32 sdk32 && ln -s steam/steamcmd/linux64 sdk64
 ```
+> [!CAUTION]
+> - If you don´t have a .steam folder in /home/steam/, please switch to this specific [tutorial](https://github.com/A1RM4X/HowTo-Palworld/blob/dev/README-no.steam.md)
+
 
 Launch server for creating configuration files:
 ```bash
@@ -127,7 +130,7 @@ Then follow the Backing up and restoring server data localy [here](https://githu
 
 
 ### 3. No .steam folder on my debian server
-Some users reported not having the same folder structure on their Debian installation. To fix the issue, follow thoses steps below:
+Some users reported not having the same folder structure on their Debian installation. To fix the issue, use this tutorial](https://github.com/A1RM4X/HowTo-Palworld/blob/dev/README-no.steam.md).
 
 Log in as steam:
 ```bash
