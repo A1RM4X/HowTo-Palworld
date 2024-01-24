@@ -19,7 +19,9 @@ Launch server for creating configuration files:
 cd ~/Steam/steamapps/common/PalServer && ./PalServer.sh -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS
 ```
 
-If the server launch correctly (= no spam of steamclient.so missing), close the server. Continue the process by copying server settings file in the right directory then edit the settings as you wish (details in YouTube video):
+If the server launch correctly (= no spam of steamclient.so missing), close the server. 
+
+Continue the process by copying server settings file in the right directory then edit the settings as you wish (details in YouTube video):
 ```bash
 cp DefaultPalWorldSettings.ini Pal/Saved/Config/LinuxServer/PalWorldSettings.ini && nano Pal/Saved/Config/LinuxServer/PalWorldSettings.ini
 ```
