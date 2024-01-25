@@ -3,6 +3,7 @@ More details videos below:
 ---
 [![A1RM4X on YouTube](http://img.youtube.com/vi/0TjFLk_lP6c/0.jpg)](https://youtu.be/0TjFLk_lP6c "Setup a dedicated Palworld server with A1RM4X - Part 1")
 [![A1RM4X on YouTube](http://img.youtube.com/vi/bjC081ERYcQ/0.jpg)](https://youtu.be/bjC081ERYcQ "Setup a dedicated Palworld server with A1RM4X - Part 2")
+[![A1RM4X on YouTube](http://img.youtube.com/vi/XCTHfe82ZmI/0.jpg)](https://youtu.be/XCTHfe82ZmI "Setup a dedicated Palworld server with A1RM4X - Part 3")
 
 > [!IMPORTANT]
 > This script is going to be updated, make sure to watch the youtube videos above to be up to date to the last scripts / tutorial.
