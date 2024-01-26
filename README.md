@@ -1,14 +1,17 @@
 # Set up a Palworld dedicated server on Linux 
 More details videos below:
 ---
-[![A1RM4X on YouTube](http://img.youtube.com/vi/0TjFLk_lP6c/0.jpg)](https://youtu.be/0TjFLk_lP6c "Setup a dedicated Palworld server with A1RM4X - Part 1")
-[![A1RM4X on YouTube](http://img.youtube.com/vi/bjC081ERYcQ/0.jpg)](https://youtu.be/bjC081ERYcQ "Setup a dedicated Palworld server with A1RM4X - Part 2")
+<a href="https://youtu.be/0TjFLk_lP6c"><img src="http://img.youtube.com/vi/0TjFLk_lP6c/0.jpg" width=45% height=45% alt="Setup a dedicated server with A1RM4X - Part 1"></a> 
+<a href="https://youtu.be/bjC081ERYcQ"><img src="http://img.youtube.com/vi/bjC081ERYcQ/0.jpg" width=45% height=45% alt="Setup a dedicated server with A1RM4X - Part 2"></a> 
+<a href="https://youtu.be/XCTHfe82ZmI"><img src="http://img.youtube.com/vi/XCTHfe82ZmI/0.jpg" width=45% height=45% alt="Setup a dedicated server with A1RM4X - Part 3"></a> 
+<a href="https://youtube.com/live/NEpZny7_7E8"><img src="http://img.youtube.com/vi/NEpZny7_7E8/0.jpg" width=45% height=45% alt="Setup a dedicated server with A1RM4X - Part 4"></a> 
+
 
 > [!IMPORTANT]
 > This script is going to be updated, make sure to watch the youtube videos above to be up to date to the last scripts / tutorial.
 
 > [!CAUTION]
-> - This script is based on Debian 12, it might work with other distros it might not, please don´t come to my discord for support, I won´t have time to adapt this script for all the distro out there.
+> - This script is based on Debian 12 and Ubuntu 23.10, it might work with other distros it might not, please don´t come to my discord for support, I won´t have time to adapt this script for all the distros out there.
 > - The game is in ealry access, this script will help you install your own dedicated server on Linux but it will not solve all the problems related to the game itself.
 > - I try to simplify the execution of the tasks / commands, however you might need to be a little bit familiar with Linux in general to run this script.
 > - I also won´t cover any problems related to networking, you are on your own when it comes to open the ports of your router or make sure you don´t have any firewall blocking you to connect on your own server. Google is your friend for fixing those common issues.
@@ -16,16 +19,21 @@ More details videos below:
 # Tutorial
 ---
 
-Make sure you have a fresh Debian 12 server up and running with a SSH access.
+Make sure you have a fresh Debian 12 / Ubuntu 23.10 server up and running with a SSH access.
 
 Update and upgrade everything:
 ```bash
 apt update && apt dist-upgrade
 ```
 
-Install SteamCMD with all the dependencies:
+On Debian, innstall SteamCMD with all the dependencies:
 ```bash
 apt install software-properties-common && apt-add-repository non-free && dpkg --add-architecture i386 && apt update && apt install steamcmd
+```
+
+On Ubuntu, innstall SteamCMD with all the dependencies:
+```bash
+apt install software-properties-common && apt-add-repository main universe restricted multiverse && dpkg --add-architecture i386 && apt update && apt install steamcmd
 ```
 
 Install sudo and create a new user steam:
@@ -54,7 +62,7 @@ if test -d /home/steam/.steam ; then clear ; echo "You have a .steam folder - FO
 ```
 
 > [!CAUTION]
-> - If you don´t have a .steam folder in /home/steam/, please switch to this specific [tutorial](https://github.com/A1RM4X/HowTo-Palworld/blob/dev/README-no.steam.md)
+> - If you don´t have a .steam folder in /home/steam/, please switch to this specific [tutorial](https://github.com/A1RM4X/HowTo-Palworld/blob/main/README-no.steam.md)
 
 Fix server log errors by creating symlinks:
 ```bash
@@ -79,7 +87,7 @@ Make sure all the command below are executed as root.
 
 Create the maintenance script, make it executable and give it the right user permissions:
 ```bash
-wget https://raw.githubusercontent.com/A1RM4X/HowTo-Palworld/dev/palworld-maintenance.sh -P /home/steam/ && chmod +x /home/steam/palworld-maintenance.sh && chown steam:steam /home/steam/palworld-maintenance.sh
+wget https://raw.githubusercontent.com/A1RM4X/HowTo-Palworld/main/palworld-maintenance.sh -P /home/steam/ && chmod +x /home/steam/palworld-maintenance.sh && chown steam:steam /home/steam/palworld-maintenance.sh
 ```
 
 Create the backup folder and give it the right permissions:
@@ -89,7 +97,7 @@ mkdir -p /home/steam/Palworld_backups && chown steam:steam /home/steam/Palworld_
 
 Download the Palworld service file:
 ```bash
-wget https://raw.githubusercontent.com/A1RM4X/HowTo-Palworld/dev/palworld.service -P /etc/systemd/system/
+wget https://raw.githubusercontent.com/A1RM4X/HowTo-Palworld/main/palworld.service -P /etc/systemd/system/
 ```
 
 Enable and start the service file (watch the videos for more details):
@@ -104,7 +112,7 @@ Stop the palworld server before restoring the backup
 systemctl stop palworld.service
 ```
 
-Make sure the previous palworld server data is deleted 
+Delete the previous server data! ATTENTION! Make sure you have a backup before doing this! 
 ```bash
 test -d /home/steam/.steam/steam/steamapps/common/PalServer/Pal/Saved && rm -rf /home/steam/.steam/steam/steamapps/common/PalServer/Pal/Saved
 ```
@@ -136,8 +144,8 @@ Log in root in the old server, then SCP transfer the file in the new server (mor
 ```bash
 scp /home/steam/Palworld_backups/Palworld_MODIFY-DATE-HERE.tar.gz IP_ADRESS_NEW_SERVER:/home/steam/Palworld_backups/
 ```
-Then follow the Backing up and restoring server data localy [here](https://github.com/A1RM4X/HowTo-Palworld/blob/dev/README.md#2-backing-up-and-restoring-server-data-localy).
+Then follow the Backing up and restoring server data localy [here](https://github.com/A1RM4X/HowTo-Palworld/tree/main#2-backing-up-and-restoring-server-data-localy).
 
 
 ### 3. No .steam folder on my debian server
-Some users reported not having the same folder structure on their Debian installation. To fix the issue, use this [tutorial](https://github.com/A1RM4X/HowTo-Palworld/blob/dev/README-no.steam.md).
+Some users reported not having the same folder structure on their Debian/Ubuntu installation. To fix the issue, use this [tutorial](https://github.com/A1RM4X/HowTo-Palworld/blob/main/README-no.steam.md).
