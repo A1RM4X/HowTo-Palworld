@@ -5,7 +5,7 @@ echo "-------------------------"
 SERVICENAME="palworld.service"
 
 # Check Status
-STATUS="$(systemctl is-active palworld.service)"
+STATUS="$(systemctl is-active $SERVICENAME)"
 
 if [ "${STATUS}" = "active" ]; then
     echo "Server is running..."
