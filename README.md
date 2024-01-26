@@ -1,10 +1,10 @@
 # Set up a Palworld dedicated server on Linux 
 More details videos below:
 ---
-<a href="https://youtu.be/0TjFLk_lP6c"><img src="http://img.youtube.com/vi/0TjFLk_lP6c/0.jpg" width=40% height=40% alt="Setup a dedicated server with A1RM4X - Part 1"></a> 
-<a href="https://youtu.be/bjC081ERYcQ"><img src="http://img.youtube.com/vi/bjC081ERYcQ/0.jpg" width=40% height=40% alt="Setup a dedicated server with A1RM4X - Part 2"></a> 
-<a href="https://youtu.be/XCTHfe82ZmI"><img src="http://img.youtube.com/vi/XCTHfe82ZmI/0.jpg" width=40% height=40% alt="Setup a dedicated server with A1RM4X - Part 3"></a> 
-<a href="https://youtube.com/live/NEpZny7_7E8"><img src="http://img.youtube.com/vi/NEpZny7_7E8/0.jpg" width=40% height=40% alt="Setup a dedicated server with A1RM4X - Part 4"></a> 
+<a href="https://youtu.be/0TjFLk_lP6c"><img src="http://img.youtube.com/vi/0TjFLk_lP6c/0.jpg" width=45% height=45% alt="Setup a dedicated server with A1RM4X - Part 1"></a> 
+<a href="https://youtu.be/bjC081ERYcQ"><img src="http://img.youtube.com/vi/bjC081ERYcQ/0.jpg" width=45% height=45% alt="Setup a dedicated server with A1RM4X - Part 2"></a> 
+<a href="https://youtu.be/XCTHfe82ZmI"><img src="http://img.youtube.com/vi/XCTHfe82ZmI/0.jpg" width=45% height=45% alt="Setup a dedicated server with A1RM4X - Part 3"></a> 
+<a href="https://youtube.com/live/NEpZny7_7E8"><img src="http://img.youtube.com/vi/NEpZny7_7E8/0.jpg" width=45% height=45% alt="Setup a dedicated server with A1RM4X - Part 4"></a> 
 
 
 > [!IMPORTANT]
