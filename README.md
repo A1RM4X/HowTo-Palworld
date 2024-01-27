@@ -146,6 +146,13 @@ scp /home/steam/Palworld_backups/Palworld_MODIFY-DATE-HERE.tar.gz IP_ADRESS_NEW_
 ```
 Then follow the Backing up and restoring server data localy [here](https://github.com/A1RM4X/HowTo-Palworld/tree/main#2-backing-up-and-restoring-server-data-localy).
 
+#### 2.1 Migrating from Windows to Linux Server
+Currently (as of this writing), if you want to move your save file from a windows server to a linux server (or vice versa), players will get assigned new `GUID` (global UIDs) upon connecting. So to get the old save file working, the files have to be edited, replacing old `GUID` with the new ones. 
+
+To fix this, please refer to [this](https://github.com/xNul/palworld-host-save-fix) repository.
+
+
+
 
 ### 3. No .steam folder on my debian server
 Some users reported not having the same folder structure on their Debian/Ubuntu installation. To fix the issue, use this [tutorial](https://github.com/A1RM4X/HowTo-Palworld/blob/main/README-no.steam.md).
