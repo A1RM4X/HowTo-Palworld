@@ -26,12 +26,12 @@ Update and upgrade everything:
 apt update && apt dist-upgrade
 ```
 
-On Debian, innstall SteamCMD with all the dependencies:
+On Debian, install SteamCMD with all the dependencies:
 ```bash
 apt install software-properties-common && apt-add-repository non-free && dpkg --add-architecture i386 && apt update && apt install steamcmd
 ```
 
-On Ubuntu, innstall SteamCMD with all the dependencies:
+On Ubuntu, install SteamCMD with all the dependencies:
 ```bash
 apt install software-properties-common && apt-add-repository main universe restricted multiverse && dpkg --add-architecture i386 && apt update && apt install steamcmd
 ```
