@@ -112,7 +112,9 @@ Stop the palworld server before restoring the backup
 systemctl stop palworld.service
 ```
 
-Delete the previous server data! ATTENTION! Make sure you have a backup before doing this! 
+Delete the previous server data
+> [!CAUTION]
+> Make sure you have a backup before doing this! 
 ```bash
 test -d /home/steam/.steam/steam/steamapps/common/PalServer/Pal/Saved && rm -rf /home/steam/.steam/steam/steamapps/common/PalServer/Pal/Saved
 ```
