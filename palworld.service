@@ -13,6 +13,7 @@ ExecStartPre=/home/steam/palworld-maintenance.sh
 ExecStart=/home/steam/.steam/steam/steamapps/common/PalServer/PalServer.sh -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS > /dev/null
 Restart=always
 RuntimeMaxSec=4h
+LimitCORE=0
 
 
 [Install]
