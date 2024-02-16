@@ -26,12 +26,12 @@ Update and upgrade everything:
 apt update && apt dist-upgrade
 ```
 
-On Debian, innstall SteamCMD with all the dependencies:
+On Debian, install SteamCMD with all the dependencies:
 ```bash
 apt install software-properties-common && apt-add-repository non-free && dpkg --add-architecture i386 && apt update && apt install steamcmd
 ```
 
-On Ubuntu, innstall SteamCMD with all the dependencies:
+On Ubuntu, install SteamCMD with all the dependencies:
 ```bash
 apt install software-properties-common && apt-add-repository main universe restricted multiverse && dpkg --add-architecture i386 && apt update && apt install steamcmd
 ```
@@ -112,7 +112,9 @@ Stop the palworld server before restoring the backup
 systemctl stop palworld.service
 ```
 
-Delete the previous server data! ATTENTION! Make sure you have a backup before doing this! 
+Delete the previous server data
+> [!CAUTION]
+> Make sure you have a backup before doing this! 
 ```bash
 test -d /home/steam/.steam/steam/steamapps/common/PalServer/Pal/Saved && rm -rf /home/steam/.steam/steam/steamapps/common/PalServer/Pal/Saved
 ```
@@ -145,6 +147,13 @@ Log in root in the old server, then SCP transfer the file in the new server (mor
 scp /home/steam/Palworld_backups/Palworld_MODIFY-DATE-HERE.tar.gz IP_ADRESS_NEW_SERVER:/home/steam/Palworld_backups/
 ```
 Then follow the Backing up and restoring server data localy [here](https://github.com/A1RM4X/HowTo-Palworld/tree/main#2-backing-up-and-restoring-server-data-localy).
+
+#### 2.1 Migrating from Windows to Linux Server
+Currently (as of this writing), if you want to move your save file from a windows server to a linux server (or vice versa), players will get assigned new `GUID` (global UIDs) upon connecting. So to get the old save file working, the files have to be edited, replacing old `GUID` with the new ones. 
+
+To fix this, please refer to [this](https://github.com/xNul/palworld-host-save-fix) repository.
+
+
 
 
 ### 3. No .steam folder on my debian server
