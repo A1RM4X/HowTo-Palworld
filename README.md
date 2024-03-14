@@ -29,7 +29,7 @@ apt update && apt dist-upgrade
 
 On **Debian**, install SteamCMD with all the dependencies:
 ```bash
-apt install software-properties-common && apt-add-repository non-free && dpkg --add-architecture i386 && apt update && apt install steamcmd
+apt install software-properties-common && apt-add-repository non-free-firmware && dpkg --add-architecture i386 && apt update && apt install steamcmd
 ```
 
 On **Ubuntu**, install SteamCMD with all the dependencies:
