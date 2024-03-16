@@ -3,7 +3,8 @@
 
 Follow this part of the tutorial after starting on the main one because your folders structure is not the same.
 
-Make sure you have a fresh Debian 12 server up and running with a SSH access.
+> [!IMPORTANT]
+> Make sure you have a fresh Debian 12 server up and running with a SSH access.
 
 Log in as steam:
 ```bash
@@ -28,13 +29,14 @@ cp DefaultPalWorldSettings.ini Pal/Saved/Config/LinuxServer/PalWorldSettings.ini
 
 ## Setup a service to automize the management of the server
 
-Make sure all the commands below are executed as root.
+> [!IMPORTANT]
+> Make sure all the commands below are executed as root.
 
 ### 1. Setup the maintenance script for server backups and updates (watch the videos for more details).
 
 Create the maintenance script, make it executable and give it the right user permissions:
 ```bash
-wget https://raw.githubusercontent.com/A1RM4X/HowTo-Palworld/main/palworld-maintenance.sh-no.steam -P /home/steam/ && mv /home/steam/palworld-maintenance.sh-no.steam /home/steam/palworld-maintenance.sh && chmod +x /home/steam/palworld-maintenance.sh && chown steam:steam /home/steam/palworld-maintenance.sh
+wget https://raw.githubusercontent.com/A1RM4X/HowTo-Palworld/main/palworld-backup.sh-no.steam -P /home/steam/ && mv /home/steam/palworld-backup.sh-no.steam /home/steam/palworld-backup.sh && chmod +x /home/steam/palworld-backup.sh && chown steam:steam /home/steam/palworld-backup.sh && wget https://raw.githubusercontent.com/A1RM4X/HowTo-Palworld/main/palworld-update.sh -P /home/steam/ && chmod +x /home/steam/palworld-update.sh && chown steam:steam /home/steam/palworld-update.sh
 ```
 
 Create the backup folder and give it the right permissions:
@@ -51,12 +53,17 @@ Enable and start the service file (watch the videos for more details):
 ```bash
 systemctl enable palworld.service && systemctl daemon-reload && systemctl start palworld.service
 ```
+
+### 2. Backing up and restoring server data localy
+
 Stop the palworld server before restoring the backup
 ```bash
 systemctl stop palworld.service
 ```
 
-Delete the previous server data! ATTENTION! Make sure you have a backup before doing this! 
+Delete the previous server data
+> [!CAUTION]
+> Make sure you have a backup before doing this! 
 ```bash
 test -d /home/steam/Steam/steamapps/common/PalServer/Pal/Saved && rm -rf /home/steam/Steam/steamapps/common/PalServer/Pal/Saved
 ```
@@ -68,7 +75,7 @@ tar -xzvf /home/steam/Palworld_backups/Palworld_MODIFY-DATE-HERE.tar.gz -C /
 
 Verify all went well
 ```bash
-test -d /home/steam/Steam/steamapps/common/PalServer/Pal/Saved && echo "RESTORATION SUCCESS"
+if test -d /home/steam/Steam/steamapps/common/PalServer/Pal/Saved ; then clear ; echo "RESTORATION SUCCESS" ; else clear ; echo "RESTORATION FAILED" ; fi
 ```
 ### [Back to the main Tutorial](https://github.com/A1RM4X/HowTo-Palworld/blob/main/README.md)
 

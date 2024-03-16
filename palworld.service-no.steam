@@ -9,8 +9,9 @@ Group=steam
 Environment="templdpath=$LD_LIBRARY_PATH"
 Environment="LD_LIBRARY_PATH=/home/steam/:$LD_LIBRARY_PATH"
 Environment="SteamAppId=2394010"
-ExecStartPre=/home/steam/palworld-maintenance.sh
+ExecStartPre=/home/steam/palworld-update.sh
 ExecStart=/home/steam/Steam/steamapps/common/PalServer/PalServer.sh -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS > /dev/null
+ExecStopPost=/home/steam/palworld-backup.sh
 Restart=always
 RuntimeMaxSec=4h
 LimitCORE=0

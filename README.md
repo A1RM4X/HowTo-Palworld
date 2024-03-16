@@ -19,19 +19,20 @@ More details videos below:
 # Tutorial
 ---
 
-Make sure you have a fresh Debian 12 / Ubuntu 23.10 server up and running with a SSH access.
+> [!IMPORTANT]
+> Make sure you have a fresh Debian 12 / Ubuntu 23.10 server up and running with a SSH access.
 
 Update and upgrade everything:
 ```bash
 apt update && apt dist-upgrade
 ```
 
-On Debian, install SteamCMD with all the dependencies:
+On **Debian**, install SteamCMD with all the dependencies:
 ```bash
-apt install software-properties-common && apt-add-repository non-free && dpkg --add-architecture i386 && apt update && apt install steamcmd
+apt install software-properties-common && apt-add-repository non-free-firmware && dpkg --add-architecture i386 && apt update && apt install steamcmd
 ```
 
-On Ubuntu, install SteamCMD with all the dependencies:
+On **Ubuntu**, install SteamCMD with all the dependencies:
 ```bash
 apt install software-properties-common && apt-add-repository main universe restricted multiverse && dpkg --add-architecture i386 && apt update && apt install steamcmd
 ```
@@ -81,13 +82,14 @@ cp DefaultPalWorldSettings.ini Pal/Saved/Config/LinuxServer/PalWorldSettings.ini
 
 ## Setup a service to automize the management of the server
 
-Make sure all the command below are executed as root.
+> [!IMPORTANT]
+> Make sure all the commands below are executed as root.
 
 ### 1. Setup the maintenance script for server backups and updates (watch the videos for more details).
 
 Create the maintenance script, make it executable and give it the right user permissions:
 ```bash
-wget https://raw.githubusercontent.com/A1RM4X/HowTo-Palworld/main/palworld-maintenance.sh -P /home/steam/ && chmod +x /home/steam/palworld-maintenance.sh && chown steam:steam /home/steam/palworld-maintenance.sh
+wget https://raw.githubusercontent.com/A1RM4X/HowTo-Palworld/main/palworld-update.sh -P /home/steam/ && chmod +x /home/steam/palworld-update.sh && chown steam:steam /home/steam/palworld-update.sh && wget https://raw.githubusercontent.com/A1RM4X/HowTo-Palworld/main/palworld-backup.sh -P /home/steam/ && chmod +x /home/steam/palworld-backup.sh && chown steam:steam /home/steam/palworld-backup.sh
 ```
 
 Create the backup folder and give it the right permissions:
@@ -152,9 +154,6 @@ Then follow the Backing up and restoring server data localy [here](https://githu
 Currently (as of this writing), if you want to move your save file from a windows server to a linux server (or vice versa), players will get assigned new `GUID` (global UIDs) upon connecting. So to get the old save file working, the files have to be edited, replacing old `GUID` with the new ones. 
 
 To fix this, please refer to [this](https://github.com/xNul/palworld-host-save-fix) repository.
-
-
-
 
 ### 3. No .steam folder on my debian server
 Some users reported not having the same folder structure on their Debian/Ubuntu installation. To fix the issue, use this [tutorial](https://github.com/A1RM4X/HowTo-Palworld/blob/main/README-no.steam.md).
