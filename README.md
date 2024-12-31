@@ -157,3 +157,12 @@ To fix this, please refer to [this](https://github.com/xNul/palworld-host-save-f
 
 ### 3. No .steam folder on my debian server
 Some users reported not having the same folder structure on their Debian/Ubuntu installation. To fix the issue, use this [tutorial](https://github.com/A1RM4X/HowTo-Palworld/blob/main/README-no.steam.md).
+
+### 4. My game progress is not being saved
+If your game progress is not being saved, it might be due to file ownership issues. This can happen if you uploaded your files using a different user such as `root` instead of the newly created `steam` account. The game needs permission to overwrite the save files, and files owned by `root` cannot be updated by the game.
+
+To fix this, reassign ownership of the save files back to the `steam` user by running the following command:
+
+```bash
+chown -R steam:steam /home/steam/.steam/steam/steamapps/common/PalServer/Pal/Saved
+```
